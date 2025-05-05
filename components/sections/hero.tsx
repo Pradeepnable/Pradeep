@@ -94,7 +94,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="gradient-border hover:text-primary transition-colors duration-300"
+              className="gradient-border hover:text-primary dark:hover:text-white transition-colors duration-300"
             >
               <Link href="#projects">View My Work</Link>
             </Button>

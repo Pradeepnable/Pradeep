@@ -61,7 +61,12 @@ export function SkillsSection() {
               <CardContent className="p-6">
                 <div className="h-[400px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
+                    <RadarChart
+                      cx="50%"
+                      cy="50%"
+                      outerRadius="80%"
+                      data={radarData}
+                    >
                       <PolarGrid />
                       <PolarAngleAxis dataKey="category" />
                       <PolarRadiusAxis angle={30} domain={[0, 100]} />
@@ -86,7 +91,7 @@ export function SkillsSection() {
             transition={{ duration: 0.5 }}
           >
             <Tabs defaultValue="frontend" className="w-full">
-              <TabsList className="mb-6 grid grid-cols-2 md:grid-cols-5 w-full">
+              <TabsList className="mb-6 flex px-1 md:grid grid-cols-2 md:grid-cols-5 w-full">
                 {skillCategories.map((category) => (
                   <TabsTrigger key={category.id} value={category.id}>
                     {category.name}

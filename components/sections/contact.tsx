@@ -36,7 +36,7 @@ const formSchema = z.object({
 
 export function ContactSection() {
   const { toast } = useToast();
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -50,12 +50,12 @@ export function ContactSection() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // In a real implementation, you would send this data to your backend or email service
     console.log(values);
-    
+
     toast({
       title: "Message sent!",
       description: "Thank you for your message. I'll get back to you soon.",
     });
-    
+
     form.reset();
   }
 
@@ -72,7 +72,8 @@ export function ContactSection() {
           <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg max-w-3xl mx-auto">
-            Have a project in mind or want to collaborate? Feel free to reach out!
+            Have a project in mind or want to collaborate? Feel free to reach
+            out!
           </p>
         </motion.div>
 
@@ -84,26 +85,26 @@ export function ContactSection() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="flex-shrink-0 mt-1">
-                  <Mail className="h-6 w-6 text-primary" />
+                  <Mail className="h-6 w-6 text-primary dark:text-muted-foreground" />
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium">Email</h4>
                   <a
                     href={`mailto:${profile.email}`}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary dark:hover:text-white transition-colors"
                   >
                     {profile.email}
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="flex-shrink-0 mt-1">
-                  <AtSign className="h-6 w-6 text-primary" />
+                  <AtSign className="h-6 w-6 text-primary dark:text-muted-foreground" />
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium">Social</h4>
@@ -113,7 +114,7 @@ export function ContactSection() {
                         href={profile.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-muted-foreground hover:text-primary dark:hover:text-white  transition-colors"
                       >
                         LinkedIn
                       </a>
@@ -123,7 +124,7 @@ export function ContactSection() {
                         href={profile.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-muted-foreground  hover:text-primary dark:hover:text-white  transition-colors"
                       >
                         GitHub
                       </a>
@@ -131,10 +132,10 @@ export function ContactSection() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="flex-shrink-0 mt-1">
-                  <MapPin className="h-6 w-6 text-primary" />
+                  <MapPin className="h-6 w-6 text-primary dark:text-muted-foreground " />
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium">Location</h4>
@@ -153,7 +154,10 @@ export function ContactSection() {
             transition={{ duration: 0.5 }}
           >
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
                 <FormField
                   control={form.control}
                   name="name"
@@ -167,7 +171,7 @@ export function ContactSection() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="email"
@@ -181,7 +185,7 @@ export function ContactSection() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="subject"
@@ -195,7 +199,7 @@ export function ContactSection() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="message"
@@ -213,7 +217,7 @@ export function ContactSection() {
                     </FormItem>
                   )}
                 />
-                
+
                 <Button type="submit" className="w-full">
                   <Send className="mr-2 h-4 w-4" /> Send Message
                 </Button>

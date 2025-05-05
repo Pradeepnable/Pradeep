@@ -44,5 +44,5 @@ export const skillCategories = [
   { id: "backend", name: "Backend" },
   { id: "database", name: "Database" },
   { id: "devops", name: "DevOps" },
-  { id: "other", name: "Other" },
+  // { id: "other", name: "Other" },
 ];

@@ -51,7 +51,7 @@ export function Header() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/#home" legacyBehavior passHref>
           <motion.a
-            className="text-xl font-bold text-white"
+            className="text-xl font-bold text-logo"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
